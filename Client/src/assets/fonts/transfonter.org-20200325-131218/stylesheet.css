@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Cassandra Personal Use';
+    src: url('CassandraPersonalUse-Regular.woff2') format('woff2'),
+        url('CassandraPersonalUse-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Quite Magical';
+    src: url('QuiteMagical-Regular.woff2') format('woff2'),
+        url('QuiteMagical-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Allessa Personal Use';
+    src: url('AllessaPersonalUse.woff2') format('woff2'),
+        url('AllessaPersonalUse.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Beauty Mountains Personal Use';
+    src: url('BeautyMountainsPersonalUse.woff2') format('woff2'),
+        url('BeautyMountainsPersonalUse.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bite Chocolate';
+    src: url('BiteChocolate.woff2') format('woff2'),
+        url('BiteChocolate.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amsterdam';
+    src: url('Amsterdam.woff2') format('woff2'),
+        url('Amsterdam.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+

@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+
+/* You can add global styles to this file, and also import other style files */
+
+
+
+
+@font-face {
+    font-family: 'Bite';
+    src: url('assets/fonts/bite-chocolate/BiteChocolate.woff2') format('woff2'),
+      url('assets/fonts/bite-chocolate/BiteChocolate.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Amsterdam';
+    src: url('assets/fonts/amsterdam/Amsterdam.woff2') format('woff2'),
+      url('assets/fonts/amsterdam/Amsterdam.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+  }
+
+
+  @font-face {
+    font-family: 'Tomatos';
+    src: url('assets/fonts/tomatos/Tomatoes.woff2') format('woff2'),
+      url('assets/fonts/tomatos/Tomatoes.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+  }
+
+
+  @font-face {
+    font-family: 'Cassandra';
+    src: url('assets/fonts/cassandra/CassandraPersonalUse-Regular.woff2') format('woff2'),
+      url('assets/fonts/cassandra/CassandraPersonalUse-Regular.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+  }
+
+
+  @font-face {
+    font-family: 'Bite';
+    src: url('assets/fonts/bite-chocolate/BiteChocolate.woff2') format('woff2'),
+      url('assets/fonts/bite-chocolate/BiteChocolate.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+  }
+/* html, body { height: 100%; } */
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

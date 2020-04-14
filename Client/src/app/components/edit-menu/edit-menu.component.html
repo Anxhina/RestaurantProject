@@ -1,0 +1,536 @@
+<!-- Pasta, meat, drink, dessert, ditore, fish buttons -->
+<div class="buttons" style="bottom: -200px; position: relative;"> 
+    <div class="row">
+            <input type="hidden" #selection>
+        <div class="col-sm-2">
+            <p (click)="selection.value = 'pasta'">Ditore</p>
+        </div>                      
+        <div class="col-sm-2">
+            <p (click)="selection.value = 'meat'">Meat</p>
+        </div>
+        <div class="col-sm-2">
+            <p (click)="selection.value = 'fish'">Fish</p>
+        </div>
+        <div class="col-sm-2">
+            <p (click)="selection.value = 'dessert'">Dessert</p>
+        </div>
+        <div class="col-sm-2">
+            <p (click)="selection.value = 'drink'">Drink</p>
+        </div>
+        <div class="col-sm-2">
+                <p (click)="selection.value = 'ditore'">Pasta</p>
+          </div>
+
+    </div>
+    <button [routerLink]="['/login']">Logout</button>
+    <button [routerLink]="['/adminp']">Edit Password</button>
+</div>
+<!-- end -->
+
+
+<!-- Insert, edit and delete menu -->
+<div class="menu" class="terminal" [ngSwitch]="selection.value"  style="bottom: -200px; position: relative;">
+    <div class="text-center" *ngSwitchDefault>
+            <p>Provo</p>
+     </div>
+
+     <!-- Ditore menu -->
+<div class="text-center"  *ngSwitchCase="'ditore'">
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content white-text">
+        <div class="row">
+          <!-- form -->
+          <div class="col s5">
+            <form #ditoreForm="ngForm" (ngSubmit)="onSubmit(ditoreForm)" >
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="editmenuService.selectedDitore._id">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="food" #food="ngModel" [(ngModel)]="editmenuService.selectedDitore.food" placeholder="Enter full name" required>
+                  <label>Name :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="description" #description="ngModel" [(ngModel)]="editmenuService.selectedDitore.description" placeholder="Enter full name" required>
+                  <label>Position :</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <button class="btn btn-custom right" type="button" (click)="resetForm(ditoreForm)">Reset</button>
+                  <button class="btn btn-custom right" type="submit" [disabled]="!ditoreForm.valid">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- end of form -->
+
+          <!-- List of ditore food -->
+          <div  style="color: black; position: relative;" class="col s7">
+              <table class="responsive-table highlight">
+                  <thead>
+                    <tr>
+                      <th>Ditore food</th>
+                    </tr>
+                  </thead>
+                  <tr style="color: black;" *ngFor="let dite of ditores">
+                      <div class="text-center">
+                          <h3 >{{dite.food}}</h3>
+                      </div>
+                          <p>{{dite.description}}</p>
+                          <br/><br/>
+                          <td>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <button class="btn btn-custom right" type="button" (click)="onEdit(dite)">Edit</button>
+                                <button class="btn btn-custom right" type="submit" (click)="onDelete(dite._id,ditoreForm)">Delete</button>
+                            </div>
+                          </div>
+                      </td>
+                  </tr>
+                </table>
+          </div>
+          <!-- end of list ditore food -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- end of ditore food -->
+
+
+<!-- Pasta menu -->
+<div class="text-center"  *ngSwitchCase="'pasta'" > 
+    <div class="row">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content white-text">
+            <div class="row">
+              <!-- Pasta form -->
+              <div class="col s5">
+                <form #pastaForm="ngForm" (ngSubmit)="onSubmitP(pastaForm)">
+                  <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="editmenuService.selectedPasta._id">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input type="text" name="pasta" #food="ngModel" [(ngModel)]="editmenuService.selectedPasta.pasta" placeholder="Enter full name" required>
+                      <label>Pasta :
+                        <label class="red-text">*</label>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <input type="text" name="descriptionp" #description="ngModel" [(ngModel)]="editmenuService.selectedPasta.descriptionp" placeholder="Enter full name" required>
+                      <label>Position :</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <button class="btn btn-custom right" type="button" (click)="resetForm(pastaForm)">Reset</button>
+                      <button class="btn btn-custom right" type="submit" [disabled]="!pastaForm.valid">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <!-- end of pasta form -->
+
+              <!-- List of pasta menu -->
+              <div  style="color: black; position: relative; " class="col s7">
+                  <table class="responsive-table highlight">
+                      <thead>
+                        <tr>
+                          <th>Pasta</th>
+                        </tr>
+                      </thead>
+                      <tr style="color: black;" *ngFor="let pasta of pastas">
+                          <div class="text-center">
+                              <h3 >{{pasta.pasta}}</h3>
+                          </div>
+                              <p>{{pasta.descriptionp}}</p>
+                              <br/><br/>
+                        <td>
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <button class="btn btn-custom right" type="button" (click)="onEditP(pasta)">Edit</button>
+                                    <button class="btn btn-custom right" type="submit" (click)="onDeleteP(pasta._id,pastaForm)">Delete</button>
+                                </div>
+                              </div>
+                          </td>
+                      </tr>
+                    </table>
+              </div>
+              <!-- end pasta list menu -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!-- end of pasta menu -->
+
+<!-- Fish menu -->
+    <div class="text-center"  *ngSwitchCase="'fish'">
+        <div class="row">
+          <div class="col s12">
+            <div class="card">
+              <div class="card-content white-text">
+                <div class="row">
+                  <!-- Fish form -->
+                  <div class="col s5">
+                    <form #fishForm="ngForm" (ngSubmit)="onSubmitF(fishForm)">
+                      <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="editmenuService.selectedFish._id">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input type="text" name="fish" #fish="ngModel" [(ngModel)]="editmenuService.selectedFish.fish" placeholder="Enter full name" required>
+                          <label>Name :
+                            <label class="red-text">*</label>
+                          </label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <input type="text" name="descriptionf" #descriptionf="ngModel" [(ngModel)]="editmenuService.selectedFish.descriptionf" placeholder="Enter full name" required>
+                          <label>Position :</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <button class="btn btn-custom right" type="button" (click)="resetForm(fishForm)">Reset</button>
+                          <button class="btn btn-custom right" type="submit" [disabled]="!fishForm.valid">Submit</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <!-- end of fish menu form -->
+
+                  <!-- list of fish menu -->
+                  <div   style="color: black; position: relative;" class="col s7">
+                      <table class="responsive-table highlight">
+                          <thead>
+                            <tr>
+                              <th>Fish</th>
+                            </tr>
+                          </thead>
+                          <tr *ngFor="let fish of fishs">
+                              <div class="text-center">
+                                  <h3 style="color: black;">{{fish.fish}}</h3>
+                              </div>
+                                  <p style="color: black;">{{fish.descriptionf}}</p>
+                                  <br/><br/>
+                            <td>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <button class="btn btn-custom right" type="button" (click)="onEditF(fish)">Edit</button>
+                                        <button class="btn btn-custom right" type="submit" (click)="onDeleteF(fish._id,fishForm)">Delete</button>
+                                    </div>
+                                  </div>
+                              </td>
+                          </tr>
+                        </table>
+                  </div>
+                  <!-- end of fish menu list -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <!-- end of fish menu -->
+
+        <!-- meat menu -->
+        <div class="text-center"  *ngSwitchCase="'meat'">
+            <div class="row">
+              <div class="col s12">
+                <div class="card">
+                  <div class="card-content white-text">
+                    <div class="row">
+                      <!-- form menu meat -->
+                      <div class="col s5">
+                        <form #meatForm="ngForm" (ngSubmit)="onSubmitM(meatForm)">
+                          <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="editmenuService.selectedMeat._id">
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <input type="text" name="meat" #meat="ngModel" [(ngModel)]="editmenuService.selectedMeat.meat" placeholder="Enter full name" required>
+                              <label>Name :
+                                <label class="red-text">*</label>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <input type="text" name="descriptionm" #descriptionm="ngModel" [(ngModel)]="editmenuService.selectedMeat.descriptionm" placeholder="Enter full name" required>
+                              <label>Position :</label>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="input-field col s12">
+                              <button class="btn btn-custom right" type="button" (click)="resetForm(meatForm)">Reset</button>
+                              <button class="btn btn-custom right" type="submit" [disabled]="!meatForm.valid">Submit</button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <!-- end of form menu meat -->
+
+                      <!-- meat list menu -->
+                      <div   style="color: black; position: relative;" class="col s7">
+                          <table class="responsive-table highlight">
+                              <thead>
+                                <tr>
+                                  <th>Meat</th>
+                                </tr>
+                              </thead>
+                              <tr style="color: black;" *ngFor="let meat of meats">
+                                  <div class="text-center">
+                                      <h3>{{meat.meat}}</h3>
+                                  </div>
+                                      <p>{{meat.descriptionm}}</p>
+                                      <br/><br/>
+                                <td>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <button class="btn btn-custom right" type="button" (click)="onEditM(meat)">Edit</button>
+                                            <button class="btn btn-custom right" type="submit" (click)="onDeleteM(meat._id,meatForm)">Delete</button>
+                                        </div>
+                                      </div>
+                                  </td>
+                              </tr>
+                            </table>
+                      </div>
+                      <!-- end of menu list meat -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+<!-- end of meat menu -->
+
+
+<!-- drink menu -->
+            <div class="text-center"  *ngSwitchCase="'drink'">
+                <div class="row">
+                  <div class="col s12">
+                    <div class="card">
+                      <div class="card-content white-text">
+                        <div class="row">
+                          <!-- form drink menu -->
+                          <div class="col s5">
+                            <form #drinkForm="ngForm" (ngSubmit)="onSubmitDr(drinkForm)">
+                              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="editmenuService.selectedDrink._id">
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <input type="text" name="drink" #drink="ngModel" [(ngModel)]="editmenuService.selectedDrink.drink" placeholder="Enter full name" required>
+                                  <label>Drink :
+                                    <label class="red-text">*</label>
+                                  </label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <input type="text" name="descriptiondr" #descriptiondr="ngModel" [(ngModel)]="editmenuService.selectedDrink.descriptiondr" placeholder="Enter full name" required>
+                                  <label>Position :</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <button class="btn btn-custom right" type="button" (click)="resetForm(drinkForm)">Reset</button>
+                                  <button class="btn btn-custom right" type="submit" [disabled]="!drinkForm.valid">Submit</button>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                          <!-- end of form drink menu -->
+
+                          <!-- drink menu list -->
+                          <div  style="color: black; position: relative; " class="col s7">
+                              <table class="responsive-table highlight">
+                                  <thead>
+                                    <tr>
+                                      <th>Drink</th>
+                                      <th></th>
+                                    </tr>
+                                  </thead>
+                                  <tr style="color: black;" *ngFor="let drink of drinks">
+                                      <div class="text-center">
+                                          <h3>{{drink.drink}}</h3>
+                                      </div>
+                                          <p>{{drink.descriptiondr}}</p>
+                                          <br/><br/>
+                                    <td>
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <button class="btn btn-custom right" type="button" (click)="onEditDr(drink)">Edit</button>
+                                                <button class="btn btn-custom right" type="submit" (click)="onDeleteDr(drink._id,drinkForm)">Delete</button>
+                                            </div>
+                                          </div>
+                                      </td>
+                                  </tr>
+                                </table>
+                          </div>
+                          <!-- end of drink menu list -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+<!-- end of drink menu -->
+
+
+<!-- dessert menu -->
+                <div class="text-center"  *ngSwitchCase="'dessert'">
+                    <div class="row">
+                      <div class="col s12">
+                        <div class="card">
+                          <div class="card-content white-text">
+                            <div class="row">
+                              <!-- form dessert menu -->
+                              <div class="col s5">
+                                <form #dessertForm="ngForm" (ngSubmit)="onSubmitD(dessertForm)">
+                                  <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="editmenuService.selectedDessert._id">
+                                  <div class="row">
+                                    <div class="input-field col s12">
+                                      <input type="text" name="dessert" #dessert="ngModel" [(ngModel)]="editmenuService.selectedDessert.dessert" placeholder="Enter full name" required>
+                                      <label>Dessert :
+                                        <label class="red-text">*</label>
+                                      </label>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="input-field col s12">
+                                      <input type="text" name="descriptiond" #descriptiond="ngModel" [(ngModel)]="editmenuService.selectedDessert.descriptiond" placeholder="Enter full name" required>
+                                      <label>Position :</label>
+                                    </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="input-field col s12">
+                                      <button class="btn btn-custom right" type="button" (click)="resetForm(dessertForm)">Reset</button>
+                                      <button class="btn btn-custom right" type="submit" [disabled]="!dessertForm.valid">Submit</button>
+                                    </div>
+                                  </div>
+                                </form>
+                              </div>
+                              <!-- end of form dessert menu -->
+
+                              <!-- dessert menu list -->
+                              <div  style="color: black; position: relative;" class="col s7">
+                                  <table class="responsive-table highlight">
+                                      <thead>
+                                        <tr>
+                                          <th>Dessert</th>
+                                        </tr>
+                                      </thead>
+                                      <tr style="color: black; position: relative; left: -50px;" *ngFor="let dessert of desserts">
+                                          <div class="text-center">
+                                              <h3>{{dessert.dessert}}</h3>
+                                          </div>
+                                              <p>{{dessert.descriptiond}}</p>
+                                              <br/><br/>
+                                        <td>
+                                            <div class="row">
+                                                <div class="input-field col s12">
+                                                    <button class="btn btn-custom right" type="button" (click)="onEditD(dessert)">Edit</button>
+                                                    <button class="btn btn-custom right" type="submit" (click)="onDeleteD(dessert._id,dessertForm)">Delete</button>
+                                                </div>
+                                              </div>
+                                          </td>
+                                      </tr>
+                                    </table>
+                              </div>
+                              <!-- end of menu dessert list -->
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                    <!-- end of dessert menu -->
+
+
+                    <!-- Reservation table -->
+<div class="container" >
+    <mat-form-field >
+        <mat-label style="color: purple; background: #D3D3D3 ; font-size: 140%;">Search</mat-label>
+        <input style="color: purple; background: #D3D3D3; font-size: 250%;"  matInput (keyup)="applyFilter($event)" placeholder="Ex. ium">
+      </mat-form-field>
+  <table mat-table [dataSource]="reservations" class="mat-elevation-z8" matSort>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>  Appointment Date </th>
+      <td mat-cell *matCellDef="let reservation"> {{ reservation.date | date:'dd/MM/yyyy'}} </td>
+    </ng-container>
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let reservation "> {{ reservation.name }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="time">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header > Time </th>
+        <td mat-cell *matCellDef="let reservation"> {{ reservation.time }} </td>
+      </ng-container>
+      <ng-container matColumnDef="persons">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Persons </th>
+          <td mat-cell *matCellDef="let reservation"> {{ reservation.persons }} </td>
+        </ng-container>
+        <ng-container matColumnDef="number">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> Number </th>
+            <td mat-cell *matCellDef="let reservation"> {{ reservation.number }} </td>
+          </ng-container>
+          <ng-container matColumnDef="specification">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Specification </th>
+              <td mat-cell *matCellDef="let reservation"> {{ reservation.specification }} </td>
+            </ng-container>
+    <ng-container id="spec" matColumnDef="cancel">
+      <th mat-header-cell *matHeaderCellDef> Cancel </th>
+      <td mat-cell  id="spec" *matCellDef="let reservation"><button (click)="onDeleteR(reservation._id, reservationForm)" mat-raised-button color="warn">Cancel</button></td>
+
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+  <tr mat-row  *matRowDef="let reservation; columns: columns"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator>
+
+
+</div>
+<!-- end of reservation table -->
+<br/><br/><br/>
+
+<!-- make a reservation -->
+<div class="container" style=" background: #3f3f3f;">
+    <form #reservationForm="ngForm" (ngSubmit)="onSubmitR(reservationForm)">
+        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="reservationService.selectedReservation._id">
+          <mat-form-field>
+              <input [(ngModel)]="date" name="date" matInput [matDatepicker]="picker" placeholder="Choose a date" required> 
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field>
+                <input [(ngModel)]="time" name="time" matInput placeholder="Time" type="time">
+              </mat-form-field>
+        <mat-form-field>
+          <input [(ngModel)]="name" name="name" matInput placeholder="Name" required>
+        </mat-form-field>
+        <mat-form-field>
+          <input [(ngModel)]="persons" name="persons" matInput placeholder="NUmber of persons" type="number">
+        </mat-form-field>
+        <mat-form-field>
+                <input [(ngModel)]="number" name="number" matInput placeholder="Phone number" type="text">
+              </mat-form-field>
+              <mat-form-field>
+                    <input [(ngModel)]="specification" name="specification" matInput placeholder="Any Specification" type="text">
+                  </mat-form-field>
+        <button mat-raised-button color="green"  type="submit" class="btn btn-custom right" type="submit" [disabled]="!reservationForm.valid">Make Appointment</button>
+                  <div class="row">
+                      <div class="input-field col s12">
+                        <button class="btn btn-custom right" type="button" (click)="resetFormR(reservationForm)">Reset</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+
+</head>
+<!-- <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" style="position: fixed;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="../../../assets/images/logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" >Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" >Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Home</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> -->
+
+
+
+
+
+
+<div class="container-fluid"  style=" height: 100vh; left: 0px;   position: absolute;  background: white;">
+
+<div class="carousel-inner">
+    <div class="carousel-item active">
+        <ngb-carousel *ngIf="image">
+           
+            <ng-template ngbSlide *ngFor="let imag of image" >
+                <div  >
+                    <img  class="w-100" [src]="imag" style="height: 90vh; " >
+               
+                </div>
+              
+              </ng-template>
+        </ngb-carousel>    
+        <div style="position: absolute; ; top: 35%; color: white;">
+                <div class="container-fluid " id="container">
+                        <div class=beautiful id=BE>Res</div>
+                        <div class=beautiful  id=A>T</div>
+                        <div class=beautiful  id=U>Au</div>
+                        <div class=beautiful  id=TIFUL>RANT</div>
+                      </div>
+        </div>
+    </div>
+ 
+</div>
+
+
+
+<br/><br/><br/><br/><br/><br/>
+
+
+<br/><br/><br/><br/><br/><br/>
+
+    <div class="row text-center padding foto">
+            <div class="col-xs-12 col-sm-6 col-md-3"  *ngFor="let image of images" >    
+         <div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="400" height="300" [src]="image" class="attachment-full size-full" alt="" /></figure>	</div>
+      </div>
+            </div>
+
+
+
+            <br/><br/><br/><br/><br/><br/>
+
+        <div class="review jumbotron text-center" id="post" style="background: white; ">
+
+                <form #revForm="ngForm" (submit)="onSubmitRev(revForm)">
+
+            <div  class="afc_popup"><h1 class="text-center" 
+            style="color: white;" label="Click" (click)="toggleR()"  id="hide" class="mr-2"><div class="loading text-center">
+  <div class="circle">R</div>
+  <div class="circle">E</div>
+  <div class="circle">V</div>
+  <div class="circle">I</div>
+  <div class="circle">E</div>
+  <div class="circle">W</div>
+  <div class="circle">S</div>
+
+  
+</div></h1><br/><br/>
+                <div  *ngIf="review" class="row" >
+<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
+                        <input id="input" type="hidden" name="_id" #_id="ngModel" [(ngModel)]="reservationService.selectedReview._id">
+                        <input id="input" type="text" [(ngModel)]="reservationService.selectedReview.username" name="username"  placeholder="Enter your name">
+                        <input id="input" type="text" [(ngModel)]="reservationService.selectedReview.rev" name="rev"  placeholder="Enter your name">
+                        <button  type="submit" value="Submit" class="btn btn-block bnt-lg text-uppercase contact-btn" id="hide"><i class="far fa-hand-point-right mr-2"></i>click here</button>
+                    </div>
+                    <div class="col">
+
+                            <ngb-carousel *ngIf="reviews" >
+           
+                                <ng-template class="container-fluid card col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2" style="height: 70%; width: 700%; background: white;" ngbSlide *ngFor="let imag of reviews" style="background: green; position: absolute;" >
+                                        <div class="card-deck">
+                                                <div class="card " style="background: white;">
+                                                  <div class="card-body text-center" >
+                                                        <h1 class="card-text" style="font-size: 200%; color: black; ">{{imag.username}}</h1>
+                                                        <p class="card-text" style="font-size: 150%; font-style: italic; color: black;"  > {{imag.rev}} </p>
+    
+                                                  </div>
+                                                </div>
+                                                </div>
+
+
+                                 
+                                  
+                                  </ng-template>
+                            </ngb-carousel>  
+                            
+                    </div>
+
+                  
+                    </div>
+
+        </div>
+        </form>
+
+        </div>
+
+            <br/><br/><br/>
+            <br/><br/><br/>
+
+<div class="jumbotron" style="background: white;">
+<figure class=" team " style="background: white; position: relative;" >
+        <img  class="w-100" src="../../../assets/images/team.jpg" style="height: 80vh;" >
+        <br/><br/><br/><br/>
+        <figcaption >
+            <div style="position: absolute; top: 50%; left: 30%; color: white;">
+            <h1 >Our Team</h1>
+    
+                         </div>
+
+            </figcaption>
+</figure> 
+
+
+<section id="team-basil" class="Index-page"  data-collection-id="58b606edebbd1a10e586acf9" data-parallax-id="58b606edebbd1a10e586acf9" data-edit-main-image="Background">
+        
+        <div class="Index-page-content ">
+          <div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1488405448204" id="page-58b606edebbd1a10e586acf9"><div class="row sqs-row"><div class="col sqs-col-4 span-4"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-8b3071a983d0a4d28ba0"><div class="sqs-block-content"><h2 style="font-size: 200%;   text-shadow: 1px 1px 10px #000;
+            ">LIZ GRISAITIS</h2><p style="font-size:150%">EXECUTIVE CHEF</p><p style="font-style: italic;"> Nullam quis risus eget urna mollis ornare vel eu leo. Curabitur blandit tempus porttitor. Curabitur blandit tempus porttitor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div></div></div><div class="col sqs-col-4 span-4"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_19_1488316984327_7821"><div class="sqs-block-content"><h2   style=" font-size:200%; text-shadow: 1px 1px 10px #000;"
+>MATTEO CAPON</h2><p style="font-size: 150%;">CHEF DE CUISINE</p><p style="font-style: italic;">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Sed posuere consectetur est at lobortis. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque.</p></div></div></div><div class="col sqs-col-4 span-4"><div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-yui_3_17_2_19_1488316984327_10428"><div class="sqs-block-content"><h2 style=" font-size:200%; text-shadow: 1px 1px 10px #000;
+    ">ANGIE WALSH</h2><p style="font-size: 150%;">PASTRY CHEF</p><p style="font-style: italic;">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cum sociis natoque penatibus et magnis.</p></div></div></div></div><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block spacer-block sqs-block-spacer" data-aspect-ratio="0.11764705882352941" data-block-type="21" id="block-yui_3_17_2_19_1488316984327_20147"><div class="sqs-block-content">&nbsp;</div></div><div class="sqs-block gallery-block sqs-block-gallery" data-block-json="&#123;&quot;hSize&quot;:null,&quot;floatDir&quot;:null,&quot;methodOption&quot;:&quot;transient&quot;,&quot;existingGallery&quot;:null,&quot;show-meta-only-title&quot;:false,&quot;newWindow&quot;:false,&quot;design&quot;:&quot;grid&quot;,&quot;aspectRatio&quot;:null,&quot;auto-crop&quot;:true,&quot;square-thumbs&quot;:true,&quot;aspect-ratio&quot;:&quot;standard&quot;,&quot;show-meta&quot;:true,&quot;thumbnails-per-row&quot;:2,&quot;padding&quot;:24,&quot;lightbox&quot;:false,&quot;collectionId&quot;:&quot;58b6082c5016e1efa0c21579&quot;,&quot;vSize&quot;:null,&quot;transientGalleryId&quot;:&quot;58b6082c5016e1efa0c21579&quot;&#125;" data-block-type="8" id="block-yui_3_17_2_19_1488316984327_21018"><div class="sqs-block-content">
+
+
+
+</div></div></div></div></div>
+        </div>
+        
+          
+        
+      </section>
+    </div>
+
+
+
+
+    
+      <br/><br/><br/>
+      <br/><br/><br/>
+
+
+      <div class="container-fluid padding">
+            <div class="row text-center padding" >
+              
+                <div class="col-12 social padding">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+        
+        
+        
+                </div>
+            </div>
+        
+        
+        </div>
+        <br/><br/><br/>
+        <br/><br/><br/>
+
+
+<footer>
+    <div class="container-fluid padding">
+        <div class=" row text-center">
+<div class="col-md-4">
+        <img src="../../../assets/images/w3newbie.png">
+    <hr class="light">
+    <p>+355675550387</p>
+    <p>anxhina.gjoni@live.com</p>
+    <p>100 Aleksandri i Madh</p>
+    <p>Tirane, Albania</p>
+
+</div>
+
+<div class="col-md-4">
+        <hr class="light">
+    <h5>Our hours</h5>
+    <hr class="light">
+    <p>Monday: 9am-5pm</p>
+    <p>Saturday: 10am - 4pm</p>
+    <P>Sanday: closed</P>
+     
+    </div>
+
+    <div class="col-md-4">
+            <hr class="light">
+        <h5>Location</h5>
+        <hr class="light">
+        <p>Monday: 9am-5pm</p>
+        <p>Saturday: 10am - 4pm</p>
+        <P>Sanday: closed</P>
+         
+        </div>
+
+<div class="col-12">
+    <hr class="light-100">
+    <h5 [routerLink]="['/login']">&copy; proka.com</h5>
+</div>
+        </div>
+    </div>
+</footer>
+<div id="afc_sidebar_697" class="afc_popup"><a label="Click" (click)="toggle()"   class="mr-2"><img src="http://myportfolio.atlanticamontaggi.it/wp-content/uploads/2020/04/Group-13449.png"></a><br/><br/>
+    <div  *ngIf="show" class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2"  >
+
+            <a  [routerLink]="['/reservation']"><button  id="hide"type="button" class="btn btn-outline-secondary btn-lg" style="   border: 4px solid white;padding: 10px; border-radius: 50px 20px; background: black; color: white; font-size: 200%;">Make a Reservation</button></a>
+
+                <a [routerLink]="['/menu']"><button id="hide" type="button" class="btn btn-outline-secondary btn-lg" style="   border: 4px solid white;padding: 10px; border-radius: 50px 20px; background: black; color: white; font-size: 200%;">Show Menu</button></a>
+</div>        </div>
+</div>
+ </html>

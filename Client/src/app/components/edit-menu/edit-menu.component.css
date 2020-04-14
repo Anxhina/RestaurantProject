@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+    table-layout: fixed;
+    position: relative;
+  }
+
+  
+
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .error {
+    background-color: #d84f4f;
+    padding: 10px;
+  }
+  
+  .success {
+    background-color: #73cc73;
+    padding: 10px;
+  }
+
+  form {
+    width: 100%;
+    table-layout: fixed;
+  }
+  

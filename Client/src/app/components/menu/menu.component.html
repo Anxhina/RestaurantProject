@@ -1,0 +1,240 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <!-- <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" style="position: fixed;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"><img src="../../../assets/images/logo.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" >Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" >Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav> -->
+
+<div class="container-fluid"  style=" height: 100vh; left: 0px;   position: absolute;  background: white;">
+
+
+    <div class="jumbotron" style="background: white;">
+        <figure class=" team " style="background: white; position: relative;" >
+                <img  class="w-100" src="../../../assets/images/menu.jpg" style="height: 50vh;" >
+                <br/><br/><br/><br/>
+                <figcaption >
+                    <div style="position: absolute; ; top: 35%; left: 45%; color: white;">
+                        <div class="container" id="menuan" style="font-size: 200%" >
+                            <div class=beautiful id=BE>M</div>
+                            <div class=beautiful  id=A>E</div>
+                            <div class=beautiful  id=U>N</div>
+                            <div class=beautiful  id=TIFUL>U</div>
+                          </div> 
+                                 </div>
+        
+                    </figcaption>
+        </figure> 
+    
+        <!-- Ditore menu -->
+            <h1  class="text-center" style="font-size: 200%;">Menu Ditore</h1><br/><br/>
+                  <div class="container-fluid row row-cols-4 text-center" [@menuAnimation]="ditore.length" >
+                <div class="col card card-body text-center" *ngFor ="let dite of ditore">
+                        <h3 style="font-size: 150%;">{{dite.food}}</h3>
+
+                    <p class="p-4" style="font-style: italic;">{{dite.description}}</p>
+            </div>
+        </div>
+
+      </div>
+
+        <!-- Photos section -->
+        <div class=" container-fluid">
+        <br/><br/><br/><br/>
+        <!-- Buttons -->
+          <div class="buttons container-fluid text-center" style="font-size: 200%; font-style: italic;" > 
+                <div class="row">
+                        <input type="hidden" #selection>
+                                     
+                    <div class="col-sm-2">
+                        <p (click)="selection.value = 'meat'">Meat</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p (click)="selection.value = 'fish'">Fish</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p (click)="selection.value = 'dessert'">Dessert</p>
+                    </div>
+                    <div class="col-sm-2">
+                        <p (click)="selection.value = 'drink'">Drink</p>
+                    </div>
+                    <div class="col-sm-2">
+                            <p (click)="selection.value = 'pasta'">Pasta</p>
+                        </div>
+                </div>
+            </div>
+            <!-- end of buttons -->
+            <br/>
+            
+        
+          <div class="mt-2 mb-5"  [ngSwitch]="selection.value" >
+            <div class=" row row-cols-4 " *ngSwitchDefault>
+              <div class="col card card-body text-center" *ngFor="let image of images" >
+                 <a  class="d-block mb-6 h-100">
+                    <img class="img-fluid img-thumbnail" [src]="image" alt="">
+                  </a>
+              </div>
+            </div>
+        
+
+           <div class=" row row-cols-4 " *ngSwitchCase="'pasta'">
+            <div class="col card card-body text-center" *ngFor="let image of imagesP">
+              <a href="../../../assets/images/menu1.jpg" class="d-block mb-6 h-100">
+                    <img class="img-fluid img-thumbnail" [src]="image" alt="">
+               </a>
+             </div>
+            </div>
+            <div class=" row row-cols-4 " *ngSwitchCase="'fish'">
+                <div class="col card card-body text-center" *ngFor="let image of imagesF">
+                  <a href="../../../assets/images/menu1.jpg" class="d-block mb-6 h-100">
+                        <img class="img-fluid img-thumbnail" [src]="image" alt="">
+                   </a>
+                 </div>
+                </div>
+                <div class=" row row-cols-4 " *ngSwitchCase="'drink'">
+                    <div class="col card card-body text-center" *ngFor="let image of imagesDr">
+                      <a href="../../../assets/images/menu1.jpg" class="d-block mb-6 h-100">
+                            <img class="img-fluid img-thumbnail" [src]="image" alt="">
+                       </a>
+                     </div>
+                    </div>
+                    <div class=" row row-cols-4 " *ngSwitchCase="'dessert'">
+                        <div class="col card card-body text-center" *ngFor="let image of imagesD">
+                          <a href="../../../assets/images/menu1.jpg" class="d-block mb-6 h-100">
+                                <img class="img-fluid img-thumbnail" [src]="image" alt="">
+                           </a>
+                         </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end of photos section -->
+                    <br/><br/><br/>
+
+
+            <!-- mene section -->
+          <h1 class="text-center" style="font-size: 250% ;">Pasta</h1><br/>
+          <div class="container">
+          <div class=" row row-cols-3 text-center"> 
+                <div  class="col  text-center" *ngFor ="let pasta of pastas">
+                   <h2>{{pasta.pasta}}</h2>
+                    <p style="font-style: italic;">{{pasta.descriptionp}}</p>
+                </div>
+                </div>
+
+          </div>
+          <br/><br/><br/>
+
+          <h1 class="text-center" style="font-size: 250% ;">Meat</h1><br/>
+          <div class="container">
+          <div class=" row row-cols-3 text-center"> 
+                <div  class="col  text-center" *ngFor ="let meat of meat">
+                   <h2>{{meat.meat}}</h2>
+                    <p style="font-style: italic;" >{{meat.descriptionm}}</p>
+                </div>
+              </div>
+          </div>
+          <br/><br/><br/>
+
+
+          <h1 class="text-center" style="font-size: 250% ;">Fish</h1><br/>
+          <div class="container">
+          <div class=" row row-cols-3 text-center"> 
+                <div  class="col  text-center" *ngFor ="let fish of fish">
+                   <h2>{{fish.fish}}</h2>
+                    <p style="font-style: italic;" >{{fish.descriptionf}}</p>
+                </div>
+              </div>
+          </div> 
+          <br/><br/><br/>
+
+          <h1 class="text-center" style="font-size: 250% ;">Dessert</h1><br/>
+          <div class="container">
+          <div class=" row row-cols-3 text-center"> 
+                <div  class="col text-center" *ngFor ="let dess of dessert">
+                   <h2>{{dess.dessert}}</h2>
+                    <p style="font-style: italic;">{{dess.descriptiond}}</p>
+                </div>
+              </div>
+          </div>
+          <br/><br/><br/>
+
+          <h1 class="text-center" style="font-size: 250% ;">Drink</h1><br/>
+          <div class="container">
+          <div class=" row row-cols-3 text-center"> 
+                <div  class="col text-center" *ngFor ="let drink of drink">
+                   <h2>{{drink.drink}}</h2>
+                    <p style="font-style: italic;">{{drink.descriptiondr}}</p>
+                </div>
+          </div>
+        </div>
+          <!-- end of menu section -->
+
+          <br/><br/><br/>
+          <br/><br/><br/>
+       
+
+          <footer>
+              <div class="container-fluid padding">
+                  <div class=" row text-center">
+          <div class="col-md-4">
+                  <img src="../../../assets/images/w3newbie.png">
+              <hr class="light">
+              <p>+355675550387</p>
+              <p>anxhina.gjoni@live.com</p>
+              <p>100 Aleksandri i Madh</p>
+              <p>Tirane, Albania</p>
+          
+          </div>
+          
+          <div class="col-md-4">
+                  <hr class="light">
+              <h5>Our hours</h5>
+              <hr class="light">
+              <p>Monday: 9am-5pm</p>
+              <p>Saturday: 10am - 4pm</p>
+              <P>Sanday: closed</P>
+               
+              </div>
+          
+              <div class="col-md-4">
+                      <hr class="light">
+                  <h5>Location</h5>
+                  <hr class="light">
+                  <p>Monday: 9am-5pm</p>
+                  <p>Saturday: 10am - 4pm</p>
+                  <P>Sanday: closed</P>
+                   
+                  </div>
+          
+          <div class="col-12">
+              <hr class="light-100">
+              <h5>&copy; proka.com</h5>
+          </div>
+                  </div>
+              </div>
+          </footer>
+        </div>
+      </body>
+</html>

@@ -1,0 +1,83 @@
+<!-- <html>
+    <head>
+
+    </head>
+    <body>
+        <nav  class="navbar navbar-expand-sm fixed-top " style="position: absolute;  right: 200px;">
+            <button class="navbar-toggler"  (click)="collapse=!collapse" type="button" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon" style="background: orange"></span>
+            </button>
+          
+            <div  class="navbar-collapse" (click)="collapse=true" [hidden]="collapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item"  style="color: green;">
+                  <a class="nav-link" style="font-size:1.5vw; color: green;" >Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="font-size:1.5vw; color: green;" [routerLink]="['/menu']">Menu <span class="sr-only">(current)</span></a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" style="font-size:1.5vw; color: green;" [routerLink]="['/reservation']">Reservation <span class="sr-only">(current)</span></a>
+                  </li>
+
+           
+
+                <li class="nav-item">
+                    <a id="twitter"style="font-size:1vw; color:green;" href="https://twitter.com/stephanieizard" target="_blank"><fa-icon [icon]="faTwitter"></fa-icon></a>
+                  </li>
+                  <li class="nav-item">
+                      <a id="facebook" style="font-size:1vw; color: green;"  href="https://www.facebook.com/girlandthegoat" target="_blank"><fa-icon [icon]="faFacebook"></fa-icon></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="instagram"  style="font-size:1vw; color: green;" href="https://instagram.com/stephanieizard/" target="_blank"><fa-icon [icon]="faInstagram"></fa-icon></a>
+                      </li>
+                      <li class="nav-item">
+                          <a  id="admin" style="font-size:1vw; color: green;"  target="_blank" [routerLink]="['/login']">     Admin</a>
+                        </li>
+              </ul>
+            </div>
+          </nav>
+    </body>
+</html> -->
+
+
+
+
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top text-center" style="position: fixed;">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><img src="../../../assets/images/logo.png"></a>
+        <button class="navbar-toggler"  (click)="collapse=!collapse" type="button" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="background: orange"></span>
+          </button>
+          <div  class="navbar-collapse" (click)="collapse=true" [hidden]="collapse">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item"  style="color: green;">
+                  <a class="nav-link" style="font-size:1.5vw; "[routerLink]="['/']" >Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="font-size:1.5vw; " [routerLink]="['/menu']">Menu <span class="sr-only">(current)</span></a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link" style="font-size:1.5vw;" [routerLink]="['/reservation']">Reservation <span class="sr-only">(current)</span></a>
+                  </li>
+
+           
+
+                <!-- <li class="nav-item">
+                    <a id="twitter"style="font-size:1vw; color:green;" href="https://twitter.com/stephanieizard" target="_blank"><fa-icon [icon]="faTwitter"></fa-icon></a>
+                  </li>
+                  <li class="nav-item">
+                      <a id="facebook" style="font-size:1vw; color: green;"  href="https://www.facebook.com/girlandthegoat" target="_blank"><fa-icon [icon]="faFacebook"></fa-icon></a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="instagram"  style="font-size:1vw; color: green;" href="https://instagram.com/stephanieizard/" target="_blank"><fa-icon [icon]="faInstagram"></fa-icon></a>
+                      </li> -->
+                      <!-- <li class="nav-item">
+                          <a  id="admin" style="font-size:1vw; color: green;"  target="_blank" [routerLink]="['/login']">     Admin</a>
+                        </li> -->
+              </ul>
+        </div>
+    </div>
+</nav>

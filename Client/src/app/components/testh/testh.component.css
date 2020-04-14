@@ -1,0 +1,280 @@
+/* html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block} */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+@media (min-width: 576px) {
+  html { font-size: 0.2rem; }
+}
+@media (min-width: 768px) {
+  html { font-size: 0.2rem; }
+}
+@media (min-width: 992px) {
+  html { font-size: 0.2rem; }
+}
+@media (min-width: 1200px) {
+  html { font-size: 1rem; }
+}
+
+#afc_sidebar_697 {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  margin: 0px 0px 0px 0px;
+  padding: 10px;
+  color: #ffffff;
+}
+
+
+ .review form, input[type="button"]{
+  background-color: white;
+
+  color: black;
+  padding: 10px;
+  margin: -14px auto;
+  padding-left: 50x;
+  padding-right: 50px;
+  text-align: center;
+  position: relative;
+  left: 10px;
+  top: 40px;
+}
+
+#hide{
+
+  padding-bottom: 100px;
+
+  width:98%;
+  padding:15px 0px 15px 8px;
+  border-radius:5px;
+  box-shadow:inset 4px 6px 10px -4px rgba(white), 0 1px 1px -1px rgba(255,255,255,0.3);
+  background: white;
+  border:1px solid rgba(0,0,0,1);
+  margin-bottom:10px;
+  color:#6E6E6E;
+  text-shadow:#000 0px 1px 5px;
+  position: relative;
+  
+  background-color: white;
+
+}
+
+#input[type="text"]{
+  padding-bottom: 100px;
+
+  width:98%;
+  padding:15px 0px 15px 8px;
+  border-radius:5px;
+  box-shadow:inset 4px 6px 10px -4px rgba(white), 0 1px 1px -1px rgba(255,255,255,0.3);
+  background: white;
+  border:1px solid rgba(0,0,0,1);
+  margin-bottom:10px;
+  color:#6E6E6E;
+  text-shadow:#000 0px 1px 5px;
+  position: relative;
+  
+  background-color: white;
+  
+}
+
+form, input[type="button"]:hover{
+  background-color: white;
+
+}
+
+#review {
+  bottom: 0px;
+  left: 0px;
+  margin: 0px 0px 0px 0px;
+  padding: 10px;
+  color: #ffffff;
+}
+
+html, body{
+  height: 100%;
+  width:100%;
+  font-family: 'Poppins' sans-serif;
+  color: #222;
+}
+
+.carousel-caption{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-caption h1{
+  font-size: 500%;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 10px #000;
+}
+
+.social a {
+  font-size: 4.5em;
+  padding: 3rem;
+}
+
+.fa-facebook a{
+  color: #3b5998;
+}
+
+.fa-facebook:hover, fa-twitter:hover, fa-instagram:hover, fa-google-pluspg:hover{
+  color: #d5d5d5;
+}
+
+footer{
+  background-color: #3f3f3f;
+  color: #d5d5d5;
+  padding-top: 2rem;
+
+}
+
+hr.light{
+  border-top: 1px solid #d5d5d5;
+  width: 75%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
+footer a{
+  color: #d5d5d5;
+}
+hr.light-100{
+  border-top: 1px solid #d5d5d5;
+  width: 100%;
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+}
+
+
+
+.foto {
+  overflow: hidden;
+  transition: all 2s ease;
+
+}
+
+.elementor-image-box-img {
+  transition: all 3s ease;
+}
+
+.foto :hover .elementor-image-box-img{
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+.foto:hover{
+  outline: 10px solide #d3325f;
+  outline-offset: 2rem;
+}
+
+
+.team h1{
+  font-size: 500%;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 10px #000;
+}
+
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev{
+    display:block;
+}
+
+
+
+.loading {
+  display: flex;
+  transition: opacity .3s ease-in;
+}
+
+
+.circle:nth-of-type(2) {
+  animation-delay: 0.1s;  
+}
+
+
+.circle:nth-of-type(3) {
+  animation-delay: 0.2s;  
+}
+
+.circle:nth-of-type(4) {
+  animation-delay: 0.3s;  
+}
+
+.circle:nth-of-type(5) {
+  animation-delay: 0.4s;  
+}
+
+.circle:nth-of-type(6) {
+  animation-delay: 0.5s;  
+}
+
+.circle:nth-of-type(7) {
+  animation-delay: 0.6s;  
+}
+
+
+.circle {
+  background-color:black;
+  align-items: center; 
+  text-align: center;
+  margin: 8px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  animation: jump 0.8s ease-in infinite;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+}
+}
+
+
+
+#container {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.beautiful {
+  color: white;
+  font-family: Quicksand;
+  font-size: 49pt;
+  letter-spacing: 11px;
+  text-shadow: 0px 0px 25px hotpink, 0px 0px 25px rgb(0, 0, 191),
+    0px 0px 25px rgb(0, 0, 191), 0px 0px 25px rgb(0, 0, 191);
+}
+
+#A, #TIFUL {
+  animation: blink 2s 2;
+  animation-delay: 1s;
+  
+}
+
+@keyframes blink {
+  from{text-shadow: 0px 0px 0px transparent; opacity: 0.3;}
+  25%{text-shadow: 0px 0px 0px transparent;opacity: 0.3;}
+  30%{text-shadow: 0px 0px 0px transparent;opacity: 0.3;}
+ 50%{text-shadow: 0px 0px 25px hotpink, 0px 0px 25px rgb(0, 0, 191),
+    0px 0px 25px rgb(0, 0, 191), 0px 0px 25px rgb(0, 0, 191);opacity: 0.7; }
+   75%{ text-shadow: 0px 0px 0px transparent;opacity: 0.3;}
+  to{ text-shadow: 0px 0px 0px transparent;opacity: 0.3;}
+}
+
+#BE, #U{
+  animation: flicker 1.7s 1;
+  animation-delay: 4s;
+}
+
+@keyframes flicker{
+  0%{text-shadow: 0px 0px 0px transparent;opacity: 0.3;}
+  50%{text-shadow: 0px 0px 0px transparent;opacity: 0.3;}
+  100%{text-shadow: 0px 0px 25px hotpink, 0px 0px 25px rgb(0, 0, 191),
+    0px 0px 25px rgb(0, 0, 191), 0px 0px 25px rgb(0, 0, 191);opacity: 1; }
+}

@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<!-- Animation Section -->
+<div class="container-fluid"   style="position: fixed;  height: 100vh; left: 0px;background-position: center;    position: absolute;  background-size: cover">
+    <!-- [ngStyle]="{'background-image': getUrl()}" -->
+  <div class="container-fluid">    
+    <div class="row">
+
+      <div class="col"  [@Photo1Animation]="images3.length" style=" bottom: -210px; ">
+            <div *ngFor ="let image of images3">
+                <img  class="w-100" [src]="image" >
+            </div> 
+         </div>
+         <div class="col"  [@Photo2Animation]="images2.length" style=" bottom: -260px; ">
+            <div *ngFor ="let image of images2">
+                <img  class="w-100" [src]="image" >
+            </div> 
+         </div>
+         <div class="col"  [@Photo1Animation]="images.length" style=" bottom: -260px;">
+            <div *ngFor ="let image of images">
+                <img  class="w-100" [src]="image" >
+            </div> 
+         </div>
+         <div class="col"  [@Photo2Animation]="images1.length" style=" bottom: -260px; ">
+            <div *ngFor ="let image of images1">
+                <img  class="w-100" [src]="image" >
+            </div> 
+         </div>
+    </div> 
+    <h1 class="text-center" style="color: green; position: relative; bottom: -370px;">IlGrapolo Restaurant</h1> 
+  </div>
+</div>
+</body>
+</html>

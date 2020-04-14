@@ -1,0 +1,129 @@
+
+<div class="container-fluid"  style=" height: 100vh; left: 0px;   position: absolute;  background: white;">
+
+
+        <figure class=" team " style="background: white; position: relative;" >
+                <img  class="w-100" src="../../../assets/images/reservation.jpg" style="height: 60vh;" >
+                <br/><br/><br/><br/>
+                <figcaption >
+                    <div style="position: absolute; ; top: 35%; color: white;">
+                        <div class="container-fluid" id="container" style="font-size: 100%" >
+                            <div class=beautiful id=BE>ResE</div>
+                            <div class=beautiful  id=A>rva</div>
+                            <div class=beautiful  id=U>T</div>
+                            <div class=beautiful  id=TIFUL>ioN</div>
+                          </div> 
+                                 </div>
+
+                    </figcaption>
+        </figure> 
+     
+
+<div class="container">
+  <div class="text-center" >
+    <h1 style="font-size: 300%;">Make a Reservation</h1>
+  </div>
+</div>
+
+<br/><br/><br/>
+<br/><br/><br/>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <h1 style="font-size: 200%;"><b>By Phone</b></h1>
+      <p >Prefer to make your reservation via phone?
+          Call (347) 555-1234 between 10am and noon.</p>
+    </div>
+    <div class="col">
+        <h1 style="font-size: 200%;"><b>SPECIAL EVENTS & PRIVATE PARTIES
+          </b></h1>
+<p >Catering and Events are opportunities for us to work more closely with our guests, occasions for us to share our dedication to celebration in exciting new ways.</p>      </div>
+  </div>
+</div>
+
+
+
+<br/><br/><br/>
+<br/><br/><br/>
+<div class="container text-center">
+    
+        <h1 style="font-size: 200%;"><b>Or Reserve Here</b></h1>
+ 
+</div>
+<br/>
+    <div class="container"  style="  background: #3f3f3f;  ">
+      <form #rForm="ngForm" (ngSubmit)="onRegisterSubmit(rForm)" class="text-center">
+          <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="reservationService.selectedReservation._id">
+            <mat-form-field>
+                <input style="color: black;" [(ngModel)]="date" name="date" matInput [matDatepicker]="picker" placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <mat-form-field>
+                  <input [(ngModel)]="time" name="time" matInput placeholder="Time" type="time">
+                </mat-form-field>
+          <mat-form-field>
+            <input [(ngModel)]="name" name="name" matInput placeholder="Name">
+          </mat-form-field>
+          <mat-form-field>
+            <input [(ngModel)]="persons" name="persons" matInput placeholder="NUmber of persons" type="number">
+          </mat-form-field>
+          <mat-form-field>
+                  <input [(ngModel)]="number" name="number" matInput placeholder="Phone number" type="text">
+                </mat-form-field>
+                <mat-form-field>
+                      <input [(ngModel)]="specification" name="specification" matInput placeholder="Any Specification" type="text">
+                    </mat-form-field>
+          <button mat-raised-button color="green">Make Appointment</button>
+                    <div class="row">
+                        <div class="input-field col s12">
+                          <button class="btn btn-custom right" type="button" style="color: white;" (click)="resetFormRe(rForm)">Reset</button>
+                        </div>
+                      </div>
+                    </form>
+                  </div> 
+<br/><br/><br/>
+
+<br/><br/><br/>
+<footer>
+    <div class="container-fluid padding">
+        <div class=" row text-center">
+<div class="col-md-4">
+        <img src="../../../assets/images/w3newbie.png">
+    <hr class="light">
+    <p>+355675550387</p>
+    <p>anxhina.gjoni@live.com</p>
+    <p>100 Aleksandri i Madh</p>
+    <p>Tirane, Albania</p>
+
+</div>
+
+<div class="col-md-4">
+        <hr class="light">
+    <h5>Our hours</h5>
+    <hr class="light">
+    <p>Monday: 9am-5pm</p>
+    <p>Saturday: 10am - 4pm</p>
+    <P>Sanday: closed</P>
+     
+    </div>
+
+    <div class="col-md-4">
+            <hr class="light">
+        <h5>Location</h5>
+        <hr class="light">
+        <p>Monday: 9am-5pm</p>
+        <p>Saturday: 10am - 4pm</p>
+        <P>Sanday: closed</P>
+         
+        </div>
+
+<div class="col-12">
+    <hr class="light-100">
+    <h5>&copy; proka.com</h5>
+</div>
+        </div>
+    </div>
+</footer>
+</div>
